@@ -18,4 +18,23 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.post('/', async (req, res) => {
+    const body = req.body;
+    console.log(body); 
+    try {
+        /* primera forma de insercion en la base de datos */
+        /* const libroDB = new Libro(body)
+        await libroDB.save()
+        console.log('Datos del libro nuevo insertado '+libroDB) */
+
+        /* segunda forma de insercion de datos en mongo */
+        await amortizacion.create(body);
+        /* Redireccionamos a donde se listan los libros */
+        // res.redirect('/libros');
+        res.json({res:'Amortizacion Exitosa insertada',intStatus:1})
+    } catch (error) {
+        console.log(error);
+    }
+});
+
 module.exports = router;

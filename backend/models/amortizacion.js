@@ -7,6 +7,8 @@ const Schema = mongoose.Schema;
     monto: Number,
     meses: Number,
     interes: Number,
+  },{
+    versionKey: false
   });
 
 /* Creamos el modelo */

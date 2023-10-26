@@ -1,4 +1,5 @@
 <button class="btn" style="background-color:lightcoral;color:white" (click)="navigatePage('/agregar')">Agregar Empleado</button>
+<button class="btn" *ngIf="desaparecer == false"  style="background-color:rgb(238, 240, 128);color:white" (click)="getRegistros()">Ver registros</button>
 <div class="row">
     <div class="col-md-3 col-lg-3">
         <div class="form-group">
@@ -10,6 +11,23 @@
     </div>
     <div class="col-md-3 col-lg-3">
         <button *ngIf="desaparecer == false" class="btn" style="background-color:cyan;color:white" (click)="abrir(RFC);">Crear Tabla</button>
+    </div>
+    <div class="col-md-3 col-lg-3">
+        <button  *ngIf="tabla1 == true" class="btn" style="background-color:rgb(147, 240, 128);color:white" (click)="agregar(RFC,prestamo,periodo,interes)">Agregar Tabla</button>
+    </div>
+    <div class="col-md-12 col-lg-12">
+    <table style="margin-left:30px;" *ngIf="mostrar == true" class="table">
+        <tr>
+          <th>RFC</th>
+          <th>Cuota</th>
+          <th>Ver</th>
+        </tr>
+        <tr *ngFor="let amor of amorArray; let i = index">
+          <td>{{ amor.cliente }}</td>
+          <td>{{ amor.monto }}</td>
+          <button class="bnt" (click)="ver(amor.cliente,amor.monto,amor.meses,amor.interes)">Ver</button>
+        </tr>
+    </table>
     </div>
     <div *ngIf="desaparecer == true">
         <label for="RFC" class="form-label larger-text">
@@ -65,7 +83,7 @@
           <td>{{ total/periodo }}</td>
           <td>{{ ((total-prestamo)/periodo) }}</td>
           <td>{{ (total/periodo) - ((total-prestamo)/periodo)}}</td>
-          <td>{{ total - (total/periodo) }}</td>
+          <td>{{ total - (total / periodo) * (i + 1) }}</td>
         </tr>
     </table>
     </div>
