@@ -92,6 +92,7 @@ export class HomeComponent implements OnInit{
   checkValue(RFC:any){
     this.tabla = false
     this.desaparecer = false
+    this.tabla1 = false
   }
   checktotal(prestamo:any,periodo:any,interes:any){
     if(prestamo == undefined || periodo== undefined || interes == undefined){
