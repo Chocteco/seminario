@@ -7,7 +7,7 @@ import { AgregarComponent } from './views/agregar/agregar.component';
 import { HomeComponent } from './views/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
-import {ReactiveFormsModule} from '@angular/forms'
+import {ReactiveFormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
