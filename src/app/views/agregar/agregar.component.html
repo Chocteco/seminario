@@ -1,11 +1,11 @@
-<div class="container">
+<div class="table-container"  id="div1">
     <div class="row">
-        <div class="col-md-4 col-lg-4">
+        <div class="col-md-3 col-lg-3">
             <div class="form-group">
                 <label for="nombre" class="form-label larger-text">
                     Nombre:
                 </label>
-                <input type="text" name="nombre" class="form-control password-input" id="nombre" required [(ngModel)]="nombre">
+                <input type="text" name="nombre" class="form-control custom-input" id="nombre" required [(ngModel)]="nombre">
             </div>
         </div>
         <div class="col-md-3 col-lg-3">
@@ -13,7 +13,7 @@
                 <label for="RFC" class="form-label larger-text">
                     RFC:
                 </label>
-                <input type="text" name="RFC" class="form-control password-input" id="RFC" [formControl]="rfcControl" [(ngModel)]="RFC">
+                <input type="text" name="RFC" class="form-control custom-input" id="RFC" [formControl]="rfcControl" [(ngModel)]="RFC">
             </div>
         </div>
         <div class="col-md-2 col-lg-2">
@@ -21,7 +21,7 @@
                 <label for="Edad" class="form-label larger-text">
                     Edad:
                 </label>
-                <input type="text" name="Edad" class="form-control password-input" id="edad" required [(ngModel)]="edad">
+                <input type="text" name="Edad" class="form-control custom-input" id="edad" required [(ngModel)]="edad">
             </div>
         </div>
         <div class="col-md-3 col-lg-3">
@@ -29,7 +29,7 @@
                 <label for="Fecha" class="form-label larger-text">
                     Fecha:
                 </label>
-                <input type="text" name="Fecha" class="form-control password-input" id="fecha" style="text-align: center;" [readonly]="true" [(ngModel)]="fecha">
+                <input type="text" name="Fecha" class="form-control custom-input" id="fecha" style="text-align: center;" [readonly]="true" [(ngModel)]="fecha">
             </div>
         </div>
         <div class="col-md-6 col-lg-6">
@@ -37,22 +37,27 @@
                 <label for="Correo" class="form-label larger-text">
                     Correo:
                 </label>
-                <input type="text" name="correo" class="form-control password-input" id="correo"  required [formControl]="correoControl" [(ngModel)]="correo">
+                <input type="text" name="correo" class="form-control custom-input" id="correo" required [formControl]="correoControl" [(ngModel)]="correo">
             </div>
         </div>
         <div class="col-md-6 col-lg-6">
             <div class="form-group">
                 <label for="Telefono" class="form-label larger-text">
-                    Telefono:
+                    Teléfono:
                 </label>
-                <input type="text" name="telefono" class="form-control password-input" id="telefono"  required [(ngModel)]="telefono">
+                <input type="text" name="telefono" class="form-control custom-input" id="telefono" required [(ngModel)]="telefono">
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-6">
+            <div class="form-group">
+                
             </div>
         </div>
         <div class="col-md-12 col-lg-12 col-sm-12 text-center">
             <div class="form-group">
-                <button class="btn" style="width: 15%;margin-top:15px;background-color:black;color:white" (click)="validar()">Agregar</button>
+                <button class="btn custom-button" (click)="validar()">Agregar</button>
             </div>
+    
         </div>
     </div>
 </div>
-  

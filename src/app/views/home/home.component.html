@@ -1,22 +1,30 @@
-<button class="btn" style="background-color:lightcoral;color:white" (click)="navigatePage('/agregar')">Agregar Empleado</button>
-<button class="btn" *ngIf="desaparecer == false"  style="background-color:rgb(238, 240, 128);color:white" (click)="getRegistros()">Ver registros</button>
-<div class="row">
-    <div class="col-md-3 col-lg-3">
+<div class="table-container"  id="div1">
+    <div class="row">
+
+        <div class="col-md-12 col-lg-12">
         <div class="form-group">
             <label for="RFC" class="form-label larger-text">
                 RFC:
             </label>
+     
             <input type="text" name="RFC" class="form-control password-input" id="RFC" (input)="checkValue(RFC)" [(ngModel)]="RFC">
+            
+            <div class="col-md-12 col-lg-12">
+
+                <div class="form-group">
+                    <button *ngIf="desaparecer == false" class="btn" style="background-color:cyan;color:white" (click)="abrir(RFC);">Crear Tabla</button>
+                    <button class="btn" style="background-color: lightcoral; color: white;" (click)="navigatePage('/agregar')">Agregar Empleado</button>
+                    <button class="btn" *ngIf="desaparecer == false" style="background-color: rgb(238, 240, 128); color: white;" (click)="getRegistros()">Ver registros</button><div class="row">
+
+                </div>
         </div>
     </div>
+  
     <div class="col-md-3 col-lg-3">
-        <button *ngIf="desaparecer == false" class="btn" style="background-color:cyan;color:white" (click)="abrir(RFC);">Crear Tabla</button>
-    </div>
-    <div class="col-md-3 col-lg-3">
-        <button  *ngIf="tabla1 == true" class="btn" style="background-color:rgb(147, 240, 128);color:white" (click)="agregar(RFC,prestamo,periodo,interes)">Agregar Tabla</button>
-    </div>
-    <div class="col-md-12 col-lg-12">
-    <table style="margin-left:30px;" *ngIf="mostrar == true" class="table">
+        <button *ngIf="tabla1 == true" class="btn mb-3" style="background-color:rgb(147, 240, 128); color: white;" (click)="agregar(RFC, prestamo, periodo, interes)">Agregar Tabla</button>
+      </div>
+      <div class="col-md-12 col-lg-12">
+        <table  *ngIf="mostrar == true" class="table">
         <tr>
           <th>RFC</th>
           <th>Cuota</th>
@@ -29,48 +37,53 @@
         </tr>
     </table>
     </div>
-    <div *ngIf="desaparecer == true">
-        <label for="RFC" class="form-label larger-text">
-            Nombre: {{nombre}}
-        </label>
-        <label for="RFC" class="form-label larger-text">
-            Correo: {{correo}}
-        </label>
-    </div>
-    <div *ngIf="desaparecer == true" class="col-md-3 col-lg-3">
-        <div class="form-group">
-            <label for="prestamo" class="form-label larger-text">
-                Prestamo:
+        </div> 
+</div> 
+    <div *ngIf="desaparecer == true" class="table-container"  id="divrfc">
+        <div *ngIf="desaparecer == true" class="col-md-3 col-lg-3" >
+            <label for="RFC" class="form-label larger-text">
+                Nombre: {{nombre}}
             </label>
-            <input (input)="checktotal(prestamo,periodo,interes)" type="number" name="prestamo" class="form-control password-input" id="prestamo"  [(ngModel)]="prestamo">
+            <label for="RFC" class="form-label larger-text">
+                Correo: {{correo}}
+            </label>
+        </div>
+        <div *ngIf="desaparecer == true" class="col-md-3 col-lg-3"  id="margen">
+            <div class="form-group">
+                <label for="prestamo" class="form-label larger-text">
+                    Prestamo:
+                </label>
+                <input (input)="checktotal(prestamo,periodo,interes)" type="number" name="prestamo" class="form-control password-input" id="prestamo"  [(ngModel)]="prestamo">
+            </div>
+        </div>
+        <div *ngIf="desaparecer == true" class="col-md-3 col-lg-3">
+            <div class="form-group">
+                <label for="periodo" class="form-label larger-text">
+                    Periodo:
+                </label>
+                <input (input)="checktotal(prestamo,periodo,interes)" type="number" name="periodo" class="form-control password-input" id="periodo"  [(ngModel)]="periodo">
+            </div>
+        </div>
+        <div *ngIf="desaparecer == true" class="col-md-3 col-lg-3">
+            <div class="form-group">
+                <label for="interes" class="form-label larger-text">
+                    Interes:
+                </label>
+                <input (input)="checktotal(prestamo,periodo,interes)" type="number" name="interes" class="form-control password-input" id="interes"  [(ngModel)]="interes">
+            </div>
+        </div>
+        <div *ngIf="desaparecer == true" class="col-md-3 col-lg-3">
+            <div class="form-group">
+                <label for="total" class="form-label larger-text">
+                    Total:
+                </label>
+                <input disabled="true" type="number" name="total" class="form-control password-input" id="itotal"  [(ngModel)]="total">
+            </div>
         </div>
     </div>
-    <div *ngIf="desaparecer == true" class="col-md-3 col-lg-3">
-        <div class="form-group">
-            <label for="periodo" class="form-label larger-text">
-                Periodo:
-            </label>
-            <input (input)="checktotal(prestamo,periodo,interes)" type="number" name="periodo" class="form-control password-input" id="periodo"  [(ngModel)]="periodo">
-        </div>
-    </div>
-    <div *ngIf="desaparecer == true" class="col-md-3 col-lg-3">
-        <div class="form-group">
-            <label for="interes" class="form-label larger-text">
-                Interes:
-            </label>
-            <input (input)="checktotal(prestamo,periodo,interes)" type="number" name="interes" class="form-control password-input" id="interes"  [(ngModel)]="interes">
-        </div>
-    </div>
-    <div *ngIf="desaparecer == true" class="col-md-3 col-lg-3">
-        <div class="form-group">
-            <label for="total" class="form-label larger-text">
-                Total:
-            </label>
-            <input disabled="true" type="number" name="total" class="form-control password-input" id="itotal"  [(ngModel)]="total">
-        </div>
-    </div>
+    <div *ngIf="desaparecer == true" class="table-container"  id="divrfc">
     <div class="col-md-12 col-lg-12">
-    <table style="margin-right:30px;" *ngIf="tabla == true" class="table">
+    <table  *ngIf="tabla == true" class="table">
         <tr>
           <th>Periodo</th>
           <th>Cuota</th>
@@ -87,4 +100,6 @@
         </tr>
     </table>
     </div>
+</div>
+
 </div>

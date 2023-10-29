@@ -1,0 +1,91 @@
+/* Estilos generales */
+#div1 {
+    text-align: center;
+    padding: 20px;
+    margin: 40px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+    max-width: 80%; /* Usamos max-width en lugar de width */
+    background-color: transparent;
+    display: grid;
+  
+    background:ghostwhite;
+    /* Control de la altura con base en el texto del div*/
+    height: auto;
+    word-wrap: break-word;
+    
+}
+
+.custom-input {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.custom-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.table-container {
+    text-align: center; /* Centra el contenido horizontalmente */
+    /*margin: 0 auto; /* Centra el contenido horizontalmente dentro del contenedor */
+    /* Puedes ajustar el ancho máximo para controlar la anchura de la tabla */
+    max-width: 800px;
+    /* Centra el contenido verticalmente en la ventana del navegador */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Opcional: ocupa toda la altura de la ventana del navegador */
+    
+    background: ghostwhite;
+    
+    text-align: center;
+    padding: 20px;
+    
+    margin: 40px auto ;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px 4px rgb(19 35 47 / 30%);
+    width: 80%;
+  }
+/* Estilos para la etiqueta */
+.form-label {
+    font-weight: bold;
+}
+
+/* Estilos para el botón */
+.custom-button {
+    width: 100%;
+}
+
+/* Estilos para el botón en hover */
+.custom-button:hover {
+    background-color: #0056b3;
+}
+
+/* Otras personalizaciones de estilo que desees */
+/* Estilos base */
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .col-md-3,
+    .col-lg-3 {
+        width: 100%; /* O el valor deseado */
+        margin: 0; /* O el margen deseado */
+    }
+
+    /* Otros estilos específicos para pantallas pequeñas */
+}
+
+/* Media query para pantallas medianas */
+@media (max-width: 992px) {
+    /* Ajustes para tamaños de pantalla medianos */
+}
